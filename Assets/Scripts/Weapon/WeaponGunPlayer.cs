@@ -5,9 +5,10 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
-public class WeaponGunPlayer : MonoBehaviour
+public class WeaponGunPlayer : Weapon
 {
     public float speed;
+    
     public GameObject bullet;
     public LayerMask enemyLayerMask;
     private float timeBtwShots;
@@ -42,27 +43,34 @@ public class WeaponGunPlayer : MonoBehaviour
         }
         return new Vector2(Random.Range(-5, 5), Random.Range(-5, 5)).normalized;
     }
-    private void Update()
+
+    private void gunAttack()
     {
         if (timeBtwShots <= 0)
         {
             GameObject curBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            curBullet.GetComponent<Bullet>().damage = damage;
             Vector2 close = FindClosestEnemy();
             close.x -= transform.position.x;
             close.y -= transform.position.y;
             //Debug.Log(close);
             Vector2 ShotingDiraction =
                 new Vector2(close.x, close.y);
-        
+            
             ShotingDiraction.Normalize();
             curBullet.gameObject.GetComponent<Rigidbody2D>().velocity = ShotingDiraction * speed;
             curBullet.gameObject.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(ShotingDiraction.y,ShotingDiraction.x) * Mathf.Rad2Deg);
             timeBtwShots = startTimeBtwShots;
-            
+                
         }
         else
         {
             timeBtwShots -= Time.deltaTime;
         }
+    }
+
+    public override void Attack()
+    {
+        gunAttack();
     }
 }
