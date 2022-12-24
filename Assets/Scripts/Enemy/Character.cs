@@ -8,6 +8,8 @@ public class Character : Creature
     bool IsSaveCharacter;
     private PlayerInput _playerInput;
     Rigidbody2D rigidbody2D;
+    [SerializeField] private BarStatus hpBar;
+    public float maxHp;
     public List<Weapon> _weapons = new List<Weapon>();
 
     private void Awake()
@@ -19,6 +21,7 @@ public class Character : Creature
     private void Start()
     {
         _weapons.Add(transform.GetComponent<WeaponGunPlayer>() );
+        maxHp = _hp;
     }
 
     void Update()
@@ -39,6 +42,7 @@ public class Character : Creature
             StartCoroutine(SaveTime());
             base.TackDamege(damage);
         }
+        hpBar.SetState(_hp, maxHp);
     }
     IEnumerator SaveTime()
     {
