@@ -8,7 +8,23 @@ public abstract class Weapon : MonoBehaviour
     protected int damage;
     [SerializeField]
     protected float delayAttack;
-    
+    [SerializeField]
+    protected int levelGun = 0;
+    [SerializeField]
+    protected int projectileNumber;
+    [SerializeField]
+    protected float projectileSpeed;
+    [SerializeField]
+    protected float aoeSice;
+    [SerializeField]
+    protected float tickRate;
+    [SerializeField]
+    public string description;
+    [SerializeField]
+    protected Sprite icon;
+
+    public abstract void LevelUp();
+
     public abstract void Attack();
     
 }

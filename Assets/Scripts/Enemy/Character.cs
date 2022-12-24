@@ -21,7 +21,12 @@ public class Character : Creature
 
     private void Start()
     {
-        _weapons.Add(transform.GetComponent<WeaponGunPlayer>() );
+        /*var kek = ;
+        WeaponStorage.weapons[0].bu;*/
+
+        _weapons.Add(gameObject.GetComponent<WeaponGunPlayer>());
+        _weapons[0].description = " damege +5";
+        var comp = gameObject.GetComponent<WeaponGunPlayer>().enabled = true;
         maxHp = _hp;
         onOpen?.Invoke("Оружие1Тест");
     }
