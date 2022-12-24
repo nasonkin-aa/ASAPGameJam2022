@@ -7,15 +7,16 @@ public class Character : Creature
 {
     bool IsSaveCharacter;
     private PlayerInput _playerInput;
-
+    Rigidbody2D rigidbody2D;
     private void Awake()
     {
+        rigidbody2D = GetComponent<Rigidbody2D>();
         _playerInput = transform.GetComponent<PlayerInput>();
     }
     void Update()
     {
-        transform.position +=
-            _playerInput.Moving * Time.deltaTime * _speed;
+        rigidbody2D.position +=
+          (Vector2) _playerInput.Moving * Time.deltaTime * _speed;
     }
     protected override void Attac(int damage)
     {
