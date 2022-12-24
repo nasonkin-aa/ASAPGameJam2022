@@ -20,5 +20,6 @@ public abstract class Enemy : Creature
     public virtual void Update()
     {
         positionPlayer = player.transform.position;
+        Move();
     }
 }

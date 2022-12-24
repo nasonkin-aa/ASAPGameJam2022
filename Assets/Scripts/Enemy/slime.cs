@@ -4,16 +4,7 @@ using UnityEngine;
 
 public class slime : Enemy
 {
-    
-    protected override void Move()
-    {
-        base.Move();
-    }
-    public override void Update()
-    {
-        base.Update();
-        Move();
-    }
+
     protected override void TackDamege()
     {
         throw new System.NotImplementedException();
