@@ -25,9 +25,12 @@ public class UpgradePanel : MonoBehaviour
         _pauseMenu = GetComponent<PauseMenu>();
     }
 
-    private void ChangeText(string text)
+    private void ChangeText(Sprite I,string S,string SS, int II)
     {
-        textMenu.text = text;
+        Debug.Log(I);
+        Debug.Log(II);
+        Debug.Log(S);
+        Debug.Log(SS);
     }
     public void OpenPanel()
     {

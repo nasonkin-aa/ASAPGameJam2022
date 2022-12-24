@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Character : Creature
 {
@@ -12,7 +13,7 @@ public class Character : Creature
     public float maxHp;
     public List<Weapon> _weapons = new List<Weapon>();
 
-    public static Action<string> onOpen;
+    public static Action<Sprite, string, string, int> onOpen;
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -28,7 +29,7 @@ public class Character : Creature
         _weapons[0].description = " damege +5";
         var comp = gameObject.GetComponent<WeaponGunPlayer>().enabled = true;
         maxHp = _hp;
-        onOpen?.Invoke("Оружие1Тест");
+        onOpen?.Invoke(_weapons[0].icon, "", "Оружие1Тест", 1);
     }
 
     void Update()
