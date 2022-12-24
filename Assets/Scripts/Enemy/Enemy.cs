@@ -14,8 +14,8 @@ public abstract class Enemy : Creature
     }
     private void Awake()
     {
-        player = FindObjectOfType<Character>().gameObject;
-        Debug.Log(player.name);
+        player = FindObjectOfType<Character>().gameObject; 
+        //Debug.Log(player.name);
     }
     public virtual void Update()
     {
