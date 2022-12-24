@@ -2,20 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradePanel : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
     private PauseMenu _pauseMenu;
+    [SerializeField] private Text textMenu;
 
     private void OnEnable()
     {
-        Character.onOpen += OpenPanel;
+        Character.onOpen += ChangeText;
     }
 
     private void OnDisable()
     {
-        Character.onOpen -= OpenPanel;
+        Character.onOpen -= ChangeText;
     }
 
     private void Awake()
@@ -23,6 +25,10 @@ public class UpgradePanel : MonoBehaviour
         _pauseMenu = GetComponent<PauseMenu>();
     }
 
+    private void ChangeText(string text)
+    {
+        textMenu.text = text;
+    }
     public void OpenPanel()
     {
         _pauseMenu.Pause();

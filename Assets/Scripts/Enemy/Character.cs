@@ -12,7 +12,7 @@ public class Character : Creature
     public float maxHp;
     public List<Weapon> _weapons = new List<Weapon>();
 
-    public static Action onOpen;
+    public static Action<string> onOpen;
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -23,6 +23,7 @@ public class Character : Creature
     {
         _weapons.Add(transform.GetComponent<WeaponGunPlayer>() );
         maxHp = _hp;
+        onOpen?.Invoke("Оружие1Тест");
     }
 
     void Update()
