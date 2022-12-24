@@ -40,7 +40,7 @@ public class Character : Creature
         var weaponList = new List<(Sprite, string, string, int, Character)>();
 
         var random = new System.Random();
-        var intArray = Enumerable.Range(0, allWeapons.Length).OrderBy(t => random.Next()).Take(2).ToArray();
+        var intArray = Enumerable.Range(0, allWeapons.Length).OrderBy(t => random.Next()).Take(3).ToArray();
         //Debug.Log(intArray);
 
         foreach (var weapon in intArray)
@@ -56,6 +56,8 @@ public class Character : Creature
         rigidbody2D.position +=
           (Vector2) _playerInput.Moving * Time.deltaTime * _speed;
         _weapons.ForEach(e=>e.Attack());
+
+        hpBar.SetState(_hp, maxHp);
     }
     protected override void Attac(int damage)
     {
@@ -99,5 +101,15 @@ public class Character : Creature
             }
         }
         onOpen?.Invoke(GetRandomWeapons());
+    }
+
+    public void HpBoost(int hp)
+    {
+        maxHp += hp;
+        _hp += hp;
+    }
+    public void SpeedBoost(int speed)
+    {
+        _speed += speed;
     }
 }
