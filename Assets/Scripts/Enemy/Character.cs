@@ -5,6 +5,17 @@ using UnityEngine;
 public class Character : Creature
 {
     bool IsSaveCharacter;
+    private PlayerInput _playerInput;
+
+    private void Awake()
+    {
+        _playerInput = transform.GetComponent<PlayerInput>();
+    }
+    void Update()
+    {
+        transform.position +=
+            _playerInput.Moving * Time.deltaTime * _speed;
+    }
     protected override void Attac(int damage)
     {
         throw new System.NotImplementedException();
@@ -24,4 +35,7 @@ public class Character : Creature
         yield return new WaitForSeconds(2f);
         IsSaveCharacter = false;
     }
+
+    
+
 }

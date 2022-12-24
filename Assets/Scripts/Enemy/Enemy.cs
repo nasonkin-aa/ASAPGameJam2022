@@ -11,7 +11,7 @@ public abstract class Enemy : Creature
     Vector3 positionPlayer;
     protected virtual void Move()
     {
-        transform.position += Vector3.Normalize(positionPlayer - transform.position) * Speed * Time.deltaTime;
+        transform.position += Vector3.Normalize(positionPlayer - transform.position) * _speed * Time.deltaTime;
     }
     private void Awake()
     {

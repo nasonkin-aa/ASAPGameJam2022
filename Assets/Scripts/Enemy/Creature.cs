@@ -5,15 +5,15 @@ using UnityEngine;
 public abstract class Creature : MonoBehaviour
 {
     [SerializeField]
-    protected float Hp;
+    protected float _hp;
     [SerializeField]
-    protected float Speed;
+    protected float _speed;
 
     public virtual void TackDamege(int damage)
     {
         Debug.Log(damage);
-        Hp -= damage;
-        if (Hp <= 0)
+        _hp -= damage;
+        if (_hp <= 0)
         {
             Die(transform.gameObject);
         }
