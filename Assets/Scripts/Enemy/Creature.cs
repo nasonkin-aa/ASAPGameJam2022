@@ -24,7 +24,6 @@ public abstract class Creature : MonoBehaviour
 
     public virtual void Die(GameObject creature)
     {
-        
         Destroy(creature);
     }
 }
