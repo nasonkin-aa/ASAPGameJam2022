@@ -1352,6 +1352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy: {fileID: 3723439483744097327, guid: 0826443f0b1a7b94e8378be8738a2073, type: 3}
+  _enemyMonke: {fileID: 3723439483744097327, guid: 098691746175d0744964a3a340ed1b88, type: 3}
   _spawnArea: {x: 15, y: 8}
   _spawnTimer: 3
   _playerPos: {fileID: 776598797}
@@ -1850,7 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25094dc4455886c4495b66396700e308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 5
   delayAttack: 0
   levelGun: 0
   projectileNumber: 0
@@ -1959,7 +1960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed180f6da6268e4dadcf925799026bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 1
   delayAttack: 0
   levelGun: 0
   projectileNumber: 0
@@ -2954,8 +2955,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.9899902, y: -11.979996}
-  m_SizeDelta: {x: -457.06, y: -171.65}
+  m_AnchoredPosition: {x: 2.9899902, y: -16.949997}
+  m_SizeDelta: {x: -457.06, y: -123.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714443064
 MonoBehaviour:
