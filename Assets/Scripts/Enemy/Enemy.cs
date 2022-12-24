@@ -4,9 +4,10 @@ using UnityEngine;
 
 public abstract class Enemy : Creature
 {
-    protected float Damage;
+    [SerializeField]
+    protected int Damage;
 
-    GameObject player;
+    protected GameObject player;
     Vector3 positionPlayer;
     protected virtual void Move()
     {
@@ -15,7 +16,6 @@ public abstract class Enemy : Creature
     private void Awake()
     {
         player = FindObjectOfType<Character>().gameObject;
-        Debug.Log(player.name);
     }
     public virtual void Update()
     {

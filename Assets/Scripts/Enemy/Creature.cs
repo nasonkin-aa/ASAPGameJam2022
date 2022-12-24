@@ -9,6 +9,19 @@ public abstract class Creature : MonoBehaviour
     [SerializeField]
     protected float Speed;
 
-    protected abstract void TackDamege();
-    protected abstract void Attac();
+    public virtual void TackDamege(int damage)
+    {
+        Debug.Log(damage);
+        Hp -= damage;
+        if (Hp <= 0)
+        {
+            Die(transform.gameObject);
+        }
+    }
+    protected abstract void Attac(int damge);
+
+    public virtual void Die( GameObject creature)
+    {
+        Destroy(creature);
+    }
 }
