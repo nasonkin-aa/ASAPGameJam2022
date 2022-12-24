@@ -831,8 +831,9 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!1 &776598797
 GameObject:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 8877359441086892815, guid: 8659afb1d3ce0a640afce43eeb206c62, type: 3}
-  m_PrefabInstance: {fileID: 8877359441452219906}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -842,6 +843,7 @@ GameObject:
   - component: {fileID: 776598801}
   - component: {fileID: 776598802}
   - component: {fileID: 776598803}
+  - component: {fileID: 776598804}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -928,8 +930,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25094dc4455886c4495b66396700e308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 10
-  _speed: 10
+  speed: 5
+  bullet: {fileID: 7311567881414223808, guid: 279dca33f6c4b2945a618db2e4de4f3e, type: 3}
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  startTimeBtwShots: 2
 --- !u!58 &776598801
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -979,6 +985,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5d7a0f9f19ee647bc7a0a0569b0742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &776598804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776598797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648ca2e97415c41459f49d47e0e037d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 100
+  _speed: 5
 --- !u!1 &800970660
 GameObject:
   m_ObjectHideFlags: 0
