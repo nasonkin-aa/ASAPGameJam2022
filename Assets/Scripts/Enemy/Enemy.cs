@@ -7,6 +7,8 @@ public abstract class Enemy : Creature
     [SerializeField]
     protected int Damage;
 
+    [SerializeField] public int expeienceReward = 400;
+
     protected GameObject player;
     Vector3 positionPlayer;
     Rigidbody2D rigidbody2D;

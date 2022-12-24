@@ -15,6 +15,8 @@ public abstract class Creature : MonoBehaviour
         _hp -= damage;
         if (_hp <= 0)
         {
+            FindObjectOfType<Character>().gameObject.GetComponent<Level>()
+                .AddExperience(gameObject.GetComponent<Enemy>().expeienceReward);
             Die(transform.gameObject);
         }
     }
