@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Weapon : MonoBehaviour
 {
@@ -21,7 +22,11 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     public string description;
     [SerializeField]
-    protected Sprite icon;
+    public Sprite icon;
+    [SerializeField]
+    protected int level;
+    [SerializeField]
+    public string name;
 
     public abstract void LevelUp();
 
