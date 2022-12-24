@@ -4,18 +4,18 @@ using UnityEngine;
 
 public abstract class Enemy : Creature
 {
-    protected float Damage;
+    [SerializeField]
+    protected int Damage;
 
-    GameObject player;
+    protected GameObject player;
     Vector3 positionPlayer;
     protected virtual void Move()
     {
-        transform.position += Vector3.Normalize(positionPlayer - transform.position) * Speed * Time.deltaTime;
+        transform.position += Vector3.Normalize(positionPlayer - transform.position) * _speed * Time.deltaTime;
     }
     private void Awake()
     {
-        player = FindObjectOfType<Character>().gameObject; 
-        //Debug.Log(player.name);
+        player = FindObjectOfType<Character>().gameObject;
     }
     public virtual void Update()
     {

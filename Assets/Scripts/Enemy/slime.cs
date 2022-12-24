@@ -5,15 +5,22 @@ using UnityEngine;
 public class slime : Enemy
 {
 
-    protected override void TackDamege()
+  /*  protected override void TackDamege(int damage)
     {
-        throw new System.NotImplementedException();
-    }
-    protected override void Attac()
+   
+    }*/
+    protected override void Attac(int damage)
     {
-        throw new System.NotImplementedException();
+        player.GetComponent<Character>().TackDamege(damage);
     }
 
+   
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject == player)
+        {
+            Attac(Damage);
+        }
+    }
 
-    
 }
