@@ -12,6 +12,7 @@ public class Character : Creature
     public float maxHp;
     public List<Weapon> _weapons = new List<Weapon>();
 
+    public static Action onOpen;
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();

@@ -14,25 +14,24 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
+                PuseMenuUI.SetActive(false);
             }
             else
             {
                 Pause();
+                PuseMenuUI.SetActive(true);
             }
         }
     }
 
-    private void Pause()
+    public void Pause()
     {
-        PuseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-           
     }
 
-    private void Resume()
+    public void Resume()
     {
-        PuseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
