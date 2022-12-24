@@ -1854,12 +1854,11 @@ MonoBehaviour:
   damage: 5
   delayAttack: 0
   levelGun: 0
-  projectileNumber: 0
+  projectileNumber: 1
   projectileSpeed: 10
   aoeSice: 0
   tickRate: 0
-  description: " \u043A\u0438\u0434\u0430\u0435\u0442 \u043F\u0438\u0440\u043E\u0436\u043E\u043A
-    \u0432 \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0435\u0433\u043E \u0432\u0440\u0430\u0433\u0430"
+  description: damage +5
   icon: {fileID: 21300000, guid: 4c314d07abac6f54c872212a18570cdc, type: 3}
   level: 1
   name: "\u043F\u0438\u0440\u043E\u0436\u043E\u043A"
@@ -1967,7 +1966,7 @@ MonoBehaviour:
   projectileSpeed: 0
   aoeSice: 1
   tickRate: 0
-  description: damage +2
+  description: attack around character
   icon: {fileID: 21300000, guid: 7dea8c7e12cc33b48a3a2a8ded1b7054, type: 3}
   level: 0
   name: "\u0410\u0423\u0415"
@@ -2955,7 +2954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.9899902, y: -16.949997}
+  m_AnchoredPosition: {x: 2.9899902, y: -16.950012}
   m_SizeDelta: {x: -457.06, y: -123.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714443064

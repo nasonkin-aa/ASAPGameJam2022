@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
             timerSecond = 0;
             timerMinut += 1;
         }
-        if (timerMinut == 10)
+        if (timerMinut == 5)
         {
             Debug.Log("GG");
         }

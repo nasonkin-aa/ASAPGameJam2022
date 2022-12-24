@@ -53,25 +53,34 @@ public class WeaponGunPlayer : Weapon
     {
         if (timeBtwShots <= 0)
         {
+            for(int i = 0; i < projectileNumber; i++)
+            {
+                Invoke("CreatBullet",i*0.5f);
 
-            GameObject curBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-            curBullet.GetComponent<Bullet>().damage = damage;
-            Vector2 close = FindClosestEnemy(transform.position);
-            close.x -= transform.position.x;
-            close.y -= transform.position.y;
-            Vector2 ShotingDiraction =
-                new Vector2(close.x, close.y);
-            
-            ShotingDiraction.Normalize();
-            curBullet.gameObject.GetComponent<Rigidbody2D>().velocity = ShotingDiraction * projectileSpeed;
-            curBullet.gameObject.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(ShotingDiraction.y,ShotingDiraction.x) * Mathf.Rad2Deg);
-            timeBtwShots = startTimeBtwShots + delayAttack;
-                
+            }
+
         }
         else
         {
             timeBtwShots -= Time.deltaTime;
         }
+    }
+
+    private void CreatBullet()
+    {
+        GameObject curBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+
+        curBullet.GetComponent<Bullet>().damage = damage;
+        Vector2 close = FindClosestEnemy(transform.position);
+        close.x -= transform.position.x;
+        close.y -= transform.position.y;
+        Vector2 ShotingDiraction =
+            new Vector2(close.x, close.y);
+
+        ShotingDiraction.Normalize();
+        curBullet.gameObject.GetComponent<Rigidbody2D>().velocity = ShotingDiraction * projectileSpeed;
+        curBullet.gameObject.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(ShotingDiraction.y, ShotingDiraction.x) * Mathf.Rad2Deg);
+        timeBtwShots = startTimeBtwShots + delayAttack;
     }
 
     public override void Attack()
@@ -81,23 +90,31 @@ public class WeaponGunPlayer : Weapon
 
     public override void LevelUp()
     {
-        levelGun++;
         LevelWeaponUpdate();
+        level++;
+        
     }
     private void LevelWeaponUpdate() 
     {
-        switch(levelGun)
+        switch(level)
         {
+            case 0:
+                description = "damage +5";
+                break;
             case 1:
                 damage += 5;
-                description = "delay attack -1";
+                description = "projectileNumber + 1";
                 break;
             case 2:
-                delayAttack -= 1;
+                projectileNumber++;
                 description = "projectile speeds 1.5";
                 break;
             case 3:
                 projectileSpeed *= 1.5f;
+                description = "delayAttack -0.5";
+                break;
+            case 4:
+                delayAttack -= 0.5f;
                 description = "damage +5";
                 break;
             default:
