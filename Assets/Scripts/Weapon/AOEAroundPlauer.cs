@@ -12,7 +12,7 @@ public class AOEAroundPlauer : Weapon
     public AOEAroundPlauer()
     {
         damage = 10;
-        description = "наносит урон вокруг персонажа";
+        description = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
     }
 
     private void OnDrawGizmos()
@@ -47,6 +47,24 @@ public class AOEAroundPlauer : Weapon
 
     public override void LevelUp()
     {
-        throw new System.NotImplementedException();
+        switch(levelGun)
+        {
+            case 1:
+                damage += 2;
+                description = "aoe size x1.5";
+                break;
+            case 2:
+                aoeSice *= 1.5f;
+                description = "delay attack -0.5";
+                break;
+            case 3:
+                delayAttack -= 0.5f;
+                description = "damage +2";
+                break;
+            default:
+                damage += 2;
+                description = "damage +2";
+                break;
+        } 
     }
 }

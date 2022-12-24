@@ -8,8 +8,11 @@ public class UpgradePanel : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
     private PauseMenu _pauseMenu;
-    [SerializeField] private Text textMenu;
-
+    [SerializeField] public List<Image> Image;
+    [SerializeField] public List<Text> Name;
+    [SerializeField] public List<Text> Descript;
+    [SerializeField] public List<Text> Level;
+    [SerializeField] public List<Character> characters;
     private void OnEnable()
     {
         Character.onOpen += ChangeText;
@@ -25,10 +28,16 @@ public class UpgradePanel : MonoBehaviour
         _pauseMenu = GetComponent<PauseMenu>();
     }
 
-    private void ChangeText(List<(Sprite ,string ,string , int)> list)
+    private void ChangeText(List<(Sprite ,string ,string , int, Character)> list)
     {
-        Debug.Log(list.Count + " lkbyf!!!!!!!!!!!!!!!!!!");
-        Debug.Log(list);
+        for (int i = 0; i < 2; ++i)
+        {
+            Image[i].sprite = list[i].Item1;
+            Name[i].text = list[i].Item2;
+            Descript[i].text = list[i].Item3;
+            Level[i].text = list[i].Item4.ToString();
+            characters[i] = list[i].Item5;
+        }
     }
     public void OpenPanel()
     {
@@ -40,5 +49,14 @@ public class UpgradePanel : MonoBehaviour
     {
         _pauseMenu.Resume();
         panel.SetActive(false);
+    }
+
+    public void Click1()
+    {
+        characters[0].LvlUpWeapon(Name[0].text);
+    }
+    public void Click2()
+    {
+        characters[0].LvlUpWeapon(Name[1].text);
     }
 }

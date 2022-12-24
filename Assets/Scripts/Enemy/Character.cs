@@ -15,7 +15,7 @@ public class Character : Creature
     public float maxHp;
     public List<Weapon> _weapons = new List<Weapon>();
 
-    public static Action <List<(Sprite, string, string, int)>> onOpen;
+    public static Action <List<(Sprite, string, string, int, Character)>> onOpen;
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -34,19 +34,19 @@ public class Character : Creature
         onOpen?.Invoke(GetRandomWeapons());
     }
 
-    private List<(Sprite, string, string, int)> GetRandomWeapons()
+    private List<(Sprite, string, string, int, Character)> GetRandomWeapons()
     {
         var allWeapons = gameObject.GetComponents<Weapon>();
-        var weaponList = new List<(Sprite, string, string, int)>();
+        var weaponList = new List<(Sprite, string, string, int, Character)>();
 
         var random = new System.Random();
         var intArray = Enumerable.Range(0, allWeapons.Length).OrderBy(t => random.Next()).Take(2).ToArray();
-        Debug.Log(intArray);
+        //Debug.Log(intArray);
 
         foreach (var weapon in intArray)
         {
             var weap = allWeapons[weapon];
-            weaponList.Add((weap.icon, weap.name, weap.description, weap.level));
+            weaponList.Add((weap.icon, weap.name, weap.description, weap.level, this));
         }
         return weaponList;
     }
@@ -82,14 +82,20 @@ public class Character : Creature
     {
         var weap = _weapons.Find(e=>e.name == name);
         if (weap != null)
+        {
             weap.LevelUp();
+            weap.level++;
+        }
         else
         {
             var newWeapons = gameObject.GetComponents<Weapon>();
             foreach (var weapon in newWeapons)
             {
                 if (weapon.name == name)
+                {
                     _weapons.Add(weapon);
+                    weapon.level++;
+                }
             }
         }
         onOpen?.Invoke(GetRandomWeapons());
