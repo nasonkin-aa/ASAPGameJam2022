@@ -1764,6 +1764,8 @@ GameObject:
   - component: {fileID: 776598804}
   - component: {fileID: 776598805}
   - component: {fileID: 776598806}
+  - component: {fileID: 776598807}
+  - component: {fileID: 776598808}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1975,6 +1977,54 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &776598807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776598797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76371aa5580980f4b85e14a362e2e7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  delayAttack: 0
+  levelGun: 0
+  projectileNumber: 0
+  projectileSpeed: 0
+  aoeSice: 0
+  tickRate: 0
+  description: MaxHp++
+  icon: {fileID: 21300000, guid: 7dea8c7e12cc33b48a3a2a8ded1b7054, type: 3}
+  level: 0
+  name: MaxHp++
+  player: {fileID: 776598804}
+--- !u!114 &776598808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776598797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4cdaf3db69d924081b5df183d314b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  delayAttack: 0
+  levelGun: 0
+  projectileNumber: 0
+  projectileSpeed: 0
+  aoeSice: 0
+  tickRate: 0
+  description: Speed++
+  icon: {fileID: 21300000, guid: 4c314d07abac6f54c872212a18570cdc, type: 3}
+  level: 0
+  name: Speed++
+  player: {fileID: 0}
 --- !u!1 &795068164
 GameObject:
   m_ObjectHideFlags: 0
