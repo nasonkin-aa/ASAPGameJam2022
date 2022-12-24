@@ -47,6 +47,7 @@ public class AOEAroundPlauer : Weapon
 
     public override void LevelUp()
     {
+        levelGun++;
         switch(levelGun)
         {
             case 1:
@@ -65,6 +66,6 @@ public class AOEAroundPlauer : Weapon
                 damage += 2;
                 description = "damage +2";
                 break;
-        } 
+        }
     }
 }

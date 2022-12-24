@@ -15,15 +15,16 @@ public abstract class Creature : MonoBehaviour
         _hp -= damage;
         if (_hp <= 0)
         {
-            FindObjectOfType<Character>().gameObject.GetComponent<Level>()
-                .AddExperience(gameObject.GetComponent<Enemy>().expeienceReward);
+            //FindObjectOfType<Character>().gameObject.GetComponent<Level>()
+            //    .AddExperience(gameObject.GetComponent<Enemy>().expeienceReward);
             Die(transform.gameObject);
         }
     }
     protected abstract void Attac(int damge);
 
-    public virtual void Die( GameObject creature)
+    public virtual void Die(GameObject creature)
     {
+        
         Destroy(creature);
     }
 }
