@@ -24,10 +24,10 @@ public class Character : Creature
 
     private void Start()
     {
-        _weapons.AddRange(gameObject.GetComponents<Weapon>());
+        //_weapons.AddRange(gameObject.GetComponents<Weapon>());
 
-        //_weapons.Add(gameObject.GetComponent<WeaponGunPlayer>());
-        _weapons[0].description = " damege +5";
+        _weapons.Add(gameObject.GetComponent<WeaponGunPlayer>());
+        //_weapons[0].description = " damege +5";
         var comp = gameObject.GetComponent<WeaponGunPlayer>().enabled = true;
         maxHp = _hp;
 
@@ -84,7 +84,6 @@ public class Character : Creature
         if (weap != null)
         {
             weap.LevelUp();
-            weap.level++;
         }
         else
         {
@@ -93,8 +92,9 @@ public class Character : Creature
             {
                 if (weapon.name == name)
                 {
+                    weapon.LevelUp();
                     _weapons.Add(weapon);
-                    weapon.level++;
+                    
                 }
             }
         }

@@ -7,12 +7,15 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject _enemy;
     [SerializeField]
+    private GameObject _enemyMonke;
+    [SerializeField]
     private Vector2 _spawnArea;
     [SerializeField]
     private float _spawnTimer;
     [SerializeField]
     private GameObject _playerPos;
     float timer;
+    
 
     private void Update()
     {
@@ -20,8 +23,7 @@ public class EnemySpawner : MonoBehaviour
         if (timer < 0f)
         {
             SpawnEnemy();
-            timer = _spawnTimer;
-            
+            timer = _spawnTimer;  
         }
     }
     private void Start()
@@ -31,12 +33,45 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Vector3 position = GenerateRandomPosition();
+        
+        if (Timer.timerMinut < 1)
+        {
+            CreateEnemy(_enemy);
+        }
+        if (Timer.timerMinut >= 1 && Timer.timerMinut < 2)
+        {
+            _spawnTimer = 1.7f;
+            CreateEnemy(_enemyMonke);
+        }
+        if (Timer.timerMinut >= 2 && Timer.timerMinut < 3)
+        {
+            CreateEnemy(_enemy);
+            CreateEnemy(_enemyMonke);
+        }
+        if (Timer.timerMinut >= 3 && Timer.timerMinut < 4)
+        {
+            _spawnTimer = 1.2f;
+            CreateEnemy(_enemyMonke);
+            CreateEnemy(_enemyMonke);
+        }
+        if (Timer.timerMinut >= 4 && Timer.timerMinut < 5)
+        {
+            _spawnTimer = 1f;
+            CreateEnemy(_enemyMonke);
+            CreateEnemy(_enemy);
+            CreateEnemy(_enemy);
+        }
 
-        position += _playerPos.transform.position;
-        GameObject newEnemy = Instantiate(_enemy);
-        newEnemy.transform.position = position;
+        void CreateEnemy(GameObject enemy)
+        {
+            Vector3 position = GenerateRandomPosition();
+
+            position += _playerPos.transform.position;
+            GameObject newEnemy = Instantiate(enemy);
+            newEnemy.transform.position = position;
+        }
     }
+
     private Vector3 GenerateRandomPosition()
     {
         Vector3 position = new Vector3();
