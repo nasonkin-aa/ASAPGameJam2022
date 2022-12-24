@@ -17,7 +17,7 @@ public class UpgradePanel : MonoBehaviour
 
     private void OnDisable()
     {
-        Character.onOpen -= ChangeText;
+        //Character.onOpen -= ChangeText;
     }
 
     private void Awake()
@@ -25,12 +25,10 @@ public class UpgradePanel : MonoBehaviour
         _pauseMenu = GetComponent<PauseMenu>();
     }
 
-    private void ChangeText(Sprite I,string S,string SS, int II)
+    private void ChangeText(List<(Sprite ,string ,string , int)> list)
     {
-        Debug.Log(I);
-        Debug.Log(II);
-        Debug.Log(S);
-        Debug.Log(SS);
+        Debug.Log(list.Count + " lkbyf!!!!!!!!!!!!!!!!!!");
+        Debug.Log(list);
     }
     public void OpenPanel()
     {

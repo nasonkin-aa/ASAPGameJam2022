@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +15,7 @@ public class Character : Creature
     public float maxHp;
     public List<Weapon> _weapons = new List<Weapon>();
 
-    public static Action<Sprite, string, string, int> onOpen;
+    public static Action <List<(Sprite, string, string, int)>> onOpen;
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -22,14 +24,31 @@ public class Character : Creature
 
     private void Start()
     {
-        /*var kek = ;
-        WeaponStorage.weapons[0].bu;*/
+        _weapons.AddRange(gameObject.GetComponents<Weapon>());
 
-        _weapons.Add(gameObject.GetComponent<WeaponGunPlayer>());
+        //_weapons.Add(gameObject.GetComponent<WeaponGunPlayer>());
         _weapons[0].description = " damege +5";
         var comp = gameObject.GetComponent<WeaponGunPlayer>().enabled = true;
         maxHp = _hp;
-        onOpen?.Invoke(_weapons[0].icon, "", "Оружие1Тест", 1);
+
+        onOpen?.Invoke(GetRandomWeapons());
+    }
+
+    private List<(Sprite, string, string, int)> GetRandomWeapons()
+    {
+        var allWeapons = gameObject.GetComponents<Weapon>();
+        var weaponList = new List<(Sprite, string, string, int)>();
+
+        var random = new System.Random();
+        var intArray = Enumerable.Range(0, allWeapons.Length).OrderBy(t => random.Next()).Take(2).ToArray();
+        Debug.Log(intArray);
+
+        foreach (var weapon in intArray)
+        {
+            var weap = allWeapons[weapon];
+            weaponList.Add((weap.icon, weap.name, weap.description, weap.level));
+        }
+        return weaponList;
     }
 
     void Update()
@@ -59,7 +78,20 @@ public class Character : Creature
         IsSaveCharacter = false;
     }
 
-    
-    
-
+    public void LvlUpWeapon(string name)
+    {
+        var weap = _weapons.Find(e=>e.name == name);
+        if (weap != null)
+            weap.LevelUp();
+        else
+        {
+            var newWeapons = gameObject.GetComponents<Weapon>();
+            foreach (var weapon in newWeapons)
+            {
+                if (weapon.name == name)
+                    _weapons.Add(weapon);
+            }
+        }
+        onOpen?.Invoke(GetRandomWeapons());
+    }
 }

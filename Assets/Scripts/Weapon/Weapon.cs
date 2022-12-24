@@ -24,7 +24,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     public Sprite icon;
     [SerializeField]
-    protected int level;
+    public int level;
     [SerializeField]
     public string name;
 
