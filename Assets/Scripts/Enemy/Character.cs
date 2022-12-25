@@ -14,6 +14,9 @@ public class Character : Creature
     [SerializeField] private BarStatus hpBar;
     public float maxHp;
     public List<Weapon> _weapons = new List<Weapon>();
+    public int hpRegenerationColldown = 4;
+    public float hpRegenerationTimer = 4f;
+    public float hpRegeneration = 1f;
 
     public static Action <List<(Sprite, string, string, int, Character)>> onOpen;
     private void Awake()
@@ -41,7 +44,6 @@ public class Character : Creature
 
         var random = new System.Random();
         var intArray = Enumerable.Range(0, allWeapons.Length).OrderBy(t => random.Next()).Take(3).ToArray();
-        //Debug.Log(intArray);
 
         foreach (var weapon in intArray)
         {
@@ -58,6 +60,7 @@ public class Character : Creature
         _weapons.ForEach(e=>e.Attack());
 
         hpBar.SetState(_hp, maxHp);
+        HpRegeneration();
     }
     protected override void Attac(int damage)
     {
@@ -112,4 +115,23 @@ public class Character : Creature
     {
         _speed += speed;
     }
+
+    private void HpRegeneration()
+    {
+        hpRegenerationTimer -= Time.deltaTime;
+        if (hpRegenerationTimer < 0)
+        {           
+            hpRegenerationTimer = hpRegenerationColldown;
+            if (_hp + hpRegeneration > maxHp)
+                _hp = maxHp;
+            else
+                _hp += hpRegeneration;
+        }
+    }
+
+    public void HpRegenerationUp (float hpRegenerationBoost)
+    {
+        hpRegeneration += hpRegenerationBoost;
+    }
+
 }
