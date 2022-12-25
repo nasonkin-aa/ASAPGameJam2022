@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,18 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-
     public static float timerMinut;
     public static float timerSecond;
+    public GameObject win;
     public Text TextTimer;
 
     private void Update()
     {
         timerSecond += Time.deltaTime;
-        TextTimer.text = timerMinut.ToString() +":"+ timerSecond.ToString("F0");
+        var answer = string.Format("{0}:{1:00}", 
+            timerMinut, 
+            timerSecond);
+        TextTimer.text = answer;
         if (timerSecond > 60)
         {
             Debug.Log(timerSecond);
@@ -22,7 +26,10 @@ public class Timer : MonoBehaviour
         }
         if (timerMinut == 5)
         {
-            Debug.Log("GG");
+            win.SetActive(true);
+            Time.timeScale = 0f;
+            PauseMenu.GameIsPaused = true;
+            
         }
 
     }
