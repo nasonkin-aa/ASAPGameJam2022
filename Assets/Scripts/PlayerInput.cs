@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    public AudioSource audioSource;
     private bool isLeft;
+    private bool isWalk;
     private void Start()
     {
         isLeft = true;
+        isWalk = false;
     }
 
     public Animator animator;
@@ -24,7 +27,18 @@ public class PlayerInput : MonoBehaviour
         _move = Vector3.zero;
         _move.x = Input.GetAxis("Horizontal");
         _move.y = Input.GetAxis("Vertical");
-        animator.SetFloat("Speed", MathF.Abs(_move.x) + MathF.Abs(_move.y));
+        var walk = MathF.Abs(_move.x) + MathF.Abs(_move.y);
+        if (walk > 0 && !isWalk)
+        {
+            audioSource.Play();
+            isWalk = true;
+        }
+        if (walk <= 0.01f && isWalk)
+        {
+            audioSource.Stop();
+            isWalk = false;
+        }
+        animator.SetFloat("Speed", walk);
         if (_move.x > 0.1f && isLeft)
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
