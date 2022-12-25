@@ -1791,7 +1791,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1ac133c44e00b8c4ab10c046294a5b68, type: 3}
-    m_FontSize: 47
+    m_FontSize: 42
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -3303,6 +3303,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649379270}
   m_CullTransparentMesh: 1
+--- !u!1 &649580700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649580701}
+  - component: {fileID: 649580702}
+  m_Layer: 0
+  m_Name: frost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &649580701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649580700}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.3, y: -2.6, z: 0}
+  m_LocalScale: {x: 1, y: 2.122663, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 776598799}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &649580702
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649580700}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 591987424, guid: 11267477d5d83884497498e20ae3ec9f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 18.754553, y: 6.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!4 &674109656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5813498753853466889, guid: 20a84cbb3472ca543876b2f179247dd4, type: 3}
@@ -3476,6 +3560,7 @@ Transform:
   - {fileID: 1448468179}
   - {fileID: 1995081000}
   - {fileID: 131096720}
+  - {fileID: 649580701}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3501,7 +3586,7 @@ MonoBehaviour:
   description: damage +5
   icon: {fileID: 1886739140, guid: 456d53a2e2b78fc47b2773947c0ca3bf, type: 3}
   level: 1
-  name: Pie
+  name: Backet
   bullet: {fileID: 7311567881414223808, guid: 279dca33f6c4b2945a618db2e4de4f3e, type: 3}
   enemyLayerMask:
     serializedVersion: 2
@@ -3623,6 +3708,7 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  frost: {fileID: 649580700}
 --- !u!114 &776598807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3645,7 +3731,7 @@ MonoBehaviour:
   description: MaxHp++
   icon: {fileID: -581244006, guid: 456d53a2e2b78fc47b2773947c0ca3bf, type: 3}
   level: 0
-  name: MaxHp++
+  name: Siluhka heroic
   player: {fileID: 776598804}
 --- !u!114 &776598808
 MonoBehaviour:
@@ -3669,7 +3755,7 @@ MonoBehaviour:
   description: Speed++
   icon: {fileID: -1179842405, guid: 456d53a2e2b78fc47b2773947c0ca3bf, type: 3}
   level: 0
-  name: Speed++
+  name: Boots Walkers
   player: {fileID: 776598804}
 --- !u!95 &776598809
 Animator:
@@ -3932,7 +4018,7 @@ MonoBehaviour:
   description: Hp regen increase
   icon: {fileID: -1281975878, guid: 456d53a2e2b78fc47b2773947c0ca3bf, type: 3}
   level: 0
-  name: Hp regene
+  name: Red hood
   player: {fileID: 776598804}
 --- !u!1 &810966722
 GameObject:
@@ -5359,7 +5445,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1ac133c44e00b8c4ab10c046294a5b68, type: 3}
-    m_FontSize: 47
+    m_FontSize: 42
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -5439,7 +5525,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1ac133c44e00b8c4ab10c046294a5b68, type: 3}
-    m_FontSize: 47
+    m_FontSize: 42
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -6293,7 +6379,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041D\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
+  m_Text: New level
 --- !u!222 &1442740287
 CanvasRenderer:
   m_ObjectHideFlags: 0
