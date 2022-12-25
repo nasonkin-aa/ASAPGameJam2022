@@ -33,7 +33,7 @@ public class PlayerInput : MonoBehaviour
             audioSource.Play();
             isWalk = true;
         }
-        if (walk <= 0.01f && isWalk)
+        if (walk <= 0.01f && isWalk || PauseMenu.GameIsPaused)
         {
             audioSource.Stop();
             isWalk = false;

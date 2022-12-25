@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject PuseMenuUI;
-    void Update()
+    /*void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
                 PuseMenuUI.SetActive(true);
             }
         }
-    }
+    }*/
 
     public void Pause()
     {

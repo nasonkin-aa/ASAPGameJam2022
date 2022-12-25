@@ -7,6 +7,7 @@ public class Level : MonoBehaviour
 {
     private int level = 1;
     private int experience = 0;
+    public AudioSource audioSoul;
 
     [SerializeField] private ExpBar _expBar;
     [SerializeField] private UpgradePanel _upgradePanel;
@@ -27,6 +28,7 @@ public class Level : MonoBehaviour
     public void AddExperience(int amount)
     {
         experience += amount;
+        audioSoul.Play();
         LevelUp();
         _expBar.UpdateExpSlider(experience, TO_LEVEL_UP);
     }
