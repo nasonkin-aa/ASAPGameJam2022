@@ -2604,6 +2604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemy: {fileID: 3723439483744097327, guid: 0826443f0b1a7b94e8378be8738a2073, type: 3}
   _enemyMonke: {fileID: 3723439483744097327, guid: 098691746175d0744964a3a340ed1b88, type: 3}
+  _wolfEnemy: {fileID: 3723439483744097327, guid: a8b478d08b28bec4cb480eb847ee2227, type: 3}
+  _pechka: {fileID: 3723439483744097327, guid: cceafcf1cb219924d9769b1539da9881, type: 3}
   _spawnArea: {x: 22, y: 14}
   _spawnTimer: 3
   _playerPos: {fileID: 776598797}

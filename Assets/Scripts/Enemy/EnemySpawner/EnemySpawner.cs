@@ -8,6 +8,12 @@ public class EnemySpawner : MonoBehaviour
     private GameObject _enemy;
     [SerializeField]
     private GameObject _enemyMonke;
+
+    [SerializeField]
+    private GameObject _wolfEnemy;
+    [SerializeField]
+    private GameObject _pechka;
+
     [SerializeField]
     private Vector2 _spawnArea;
     [SerializeField]
@@ -15,6 +21,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject _playerPos;
     float timer;
+    float pec = 30f;
+    float timprc = 30f;
     
 
     private void Update()
@@ -40,7 +48,7 @@ public class EnemySpawner : MonoBehaviour
         }
         if (Timer.timerMinut >= 1 && Timer.timerMinut < 2)
         {
-            _spawnTimer = 1.7f;
+            _spawnTimer = 1.5f;
             CreateEnemy(_enemyMonke);
         }
         if (Timer.timerMinut >= 2 && Timer.timerMinut < 3)
@@ -52,16 +60,34 @@ public class EnemySpawner : MonoBehaviour
         {
             _spawnTimer = 1.2f;
             CreateEnemy(_enemyMonke);
-            CreateEnemy(_enemyMonke);
+            CreateEnemy(_wolfEnemy);
         }
         if (Timer.timerMinut >= 4 && Timer.timerMinut < 5)
         {
             _spawnTimer = 1f;
             CreateEnemy(_enemyMonke);
             CreateEnemy(_enemy);
+            CreateEnemy(_wolfEnemy);
+        }
+        if (Timer.timerMinut > 5)
+        {
+            _spawnTimer = 1f;
             CreateEnemy(_enemy);
+            CreateEnemy(_enemy);
+
+            timprc -= Time.deltaTime;
+            if (timprc < 0)
+            {
+                CreateEnemy(_pechka);
+                timprc = pec;
+            }
         }
 
+        IEnumerator peckra()
+        {
+            yield return new WaitForSeconds(70f);
+            CreateEnemy(_enemy);
+        }
         void CreateEnemy(GameObject enemy)
         {
             Vector3 position = GenerateRandomPosition();
