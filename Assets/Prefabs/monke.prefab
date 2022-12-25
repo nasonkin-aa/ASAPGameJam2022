@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7848944637434736273}
   - component: {fileID: -6121645050599381073}
   - component: {fileID: -5904933567382492438}
+  - component: {fileID: 1495537206}
   m_Layer: 6
   m_Name: monke
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3723439483744097327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.3884654, y: -0.9594007, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.4900002, y: 2.9406402, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1701138411, guid: 7fc251d828e425e458458618ef9c2624, type: 3}
   m_Color: {r: 0.8584906, g: 0.55025387, b: 0.3514952, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 1
+  m_Size: {x: 0.75, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 5
-  _speed: 3
+  _speed: 5
   Damage: 5
   expeienceReward: 400
 --- !u!61 &-7848944637434736273
@@ -117,18 +118,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0026835501, y: -0.0040973425}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 4.4900002, y: 2.94064}
+    newSize: {x: 0.75, y: 0.75}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7048157, y: 0.64762664}
   m_EdgeRadius: 0
 --- !u!50 &-6121645050599381073
 Rigidbody2D:
@@ -164,3 +165,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 5633177095355603698, guid: 45240e6755d0d424fb1f1f1a34583307, type: 3}
+--- !u!114 &1495537206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723439483744097327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1224e4da56bd14db74934066b78f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
