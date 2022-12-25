@@ -8,6 +8,7 @@ public class AOEAroundPlauer : Weapon
     public float startTimeBtwShots = 2;
     public int radius = 5;
     public LayerMask enemyLayerMask = 6;
+    public GameObject frost;
 
     public AOEAroundPlauer()
     {
@@ -29,15 +30,16 @@ public class AOEAroundPlauer : Weapon
 
         if (timeBtwShots <= 0)
         {        
+            frost.SetActive(true);
             Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(transform.position, 3 * aoeSice, enemyLayerMask);
-            Debug.Log("aoe " + damage);
-            Debug.Log("aoe count" + enemyColliders.Length);
+            
             foreach (var enemy in enemyColliders)
             {
+                
                 enemy.gameObject.GetComponent<Creature>().TackDamege(damage);
             }
             timeBtwShots = startTimeBtwShots + delayAttack;
-
+            Invoke("DisableFrost", 0.2f);
         }
         else
         {
@@ -45,6 +47,10 @@ public class AOEAroundPlauer : Weapon
         }
     }
 
+    public void DisableFrost()
+    {
+        frost.SetActive(false);
+    }
     public override void LevelUp()
     {
         switch(level)
