@@ -20,7 +20,7 @@ public class UpgradePanel : MonoBehaviour
 
     private void OnDisable()
     {
-        //Character.onOpen -= ChangeText;
+        Character.onOpen -= ChangeText;
     }
 
     private void Awake()
