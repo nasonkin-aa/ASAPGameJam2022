@@ -1203,6 +1203,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360535133}
   m_CullTransparentMesh: 1
+--- !u!1 &361708627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4228467716631532222, guid: 38353496c805c9942b914e5eab10ff7a, type: 3}
+  m_PrefabInstance: {fileID: 1141403817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &361708633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361708627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a57fe1b1dc865749a015e10f5419df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  delayAttack: 0
+  levelGun: 0
+  projectileNumber: 0
+  projectileSpeed: 0
+  aoeSice: 0
+  tickRate: 0
+  description: 
+  icon: {fileID: 0}
+  level: 0
+  name: 
+  links: []
 --- !u!1 &361861948
 GameObject:
   m_ObjectHideFlags: 0
@@ -2447,6 +2476,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649379270}
   m_CullTransparentMesh: 1
+--- !u!1 &715356307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4228467717852841980, guid: 38353496c805c9942b914e5eab10ff7a, type: 3}
+  m_PrefabInstance: {fileID: 1141403817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &715356313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715356307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a57fe1b1dc865749a015e10f5419df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  delayAttack: 0
+  levelGun: 0
+  projectileNumber: 0
+  projectileSpeed: 0
+  aoeSice: 0
+  tickRate: 0
+  description: 
+  icon: {fileID: 0}
+  level: 0
+  name: 
+  links: []
 --- !u!1 &776598797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,7 +2615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25094dc4455886c4495b66396700e308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 0
   delayAttack: 0
   levelGun: 0
   projectileNumber: 1
@@ -4224,6 +4282,35 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435"
+--- !u!1 &1185068080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4228467717874607959, guid: 38353496c805c9942b914e5eab10ff7a, type: 3}
+  m_PrefabInstance: {fileID: 1141403817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1185068086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185068080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a57fe1b1dc865749a015e10f5419df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  delayAttack: 0
+  levelGun: 0
+  projectileNumber: 0
+  projectileSpeed: 0
+  aoeSice: 0
+  tickRate: 0
+  description: 
+  icon: {fileID: 0}
+  level: 0
+  name: 
+  links: []
 --- !u!1 &1190829631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4373,6 +4460,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190829631}
   m_CullTransparentMesh: 1
+--- !u!1 &1361072365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4228467717642223444, guid: 38353496c805c9942b914e5eab10ff7a, type: 3}
+  m_PrefabInstance: {fileID: 1141403817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1361072371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361072365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a57fe1b1dc865749a015e10f5419df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  delayAttack: 0
+  levelGun: 0
+  projectileNumber: 0
+  projectileSpeed: 0
+  aoeSice: 0
+  tickRate: 0
+  description: 
+  icon: {fileID: 0}
+  level: 0
+  name: 
+  links: []
 --- !u!1 &1442131784
 GameObject:
   m_ObjectHideFlags: 0
@@ -5082,6 +5198,35 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.43
   m_Text: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 "
+--- !u!1 &1627315012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4228467717065452424, guid: 38353496c805c9942b914e5eab10ff7a, type: 3}
+  m_PrefabInstance: {fileID: 1141403817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1627315018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627315012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a57fe1b1dc865749a015e10f5419df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  delayAttack: 0
+  levelGun: 0
+  projectileNumber: 0
+  projectileSpeed: 0
+  aoeSice: 0
+  tickRate: 0
+  description: 
+  icon: {fileID: 0}
+  level: 0
+  name: 
+  links: []
 --- !u!1 &1631509843
 GameObject:
   m_ObjectHideFlags: 0

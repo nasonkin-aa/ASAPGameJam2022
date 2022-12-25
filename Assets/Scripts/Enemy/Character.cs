@@ -27,9 +27,9 @@ public class Character : Creature
 
     private void Start()
     {
-        //_weapons.AddRange(gameObject.GetComponents<Weapon>());
+        _weapons.AddRange(gameObject.GetComponents<Weapon>());
 
-        _weapons.Add(gameObject.GetComponent<WeaponGunPlayer>());
+        //_weapons.Add(gameObject.GetComponent<WeaponGunPlayer>());
         //_weapons[0].description = " damege +5";
         var comp = gameObject.GetComponent<WeaponGunPlayer>().enabled = true;
         maxHp = _hp;
