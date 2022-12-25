@@ -30,12 +30,12 @@ public class UpgradePanel : MonoBehaviour
 
     private void ChangeText(List<(Sprite ,string ,string , int, Character)> list)
     {
-        for (int i = 0; i < 2; ++i)
+        for (int i = 0; i < 3; ++i)
         {
             Image[i].sprite = list[i].Item1;
             Name[i].text = list[i].Item2;
             Descript[i].text = list[i].Item3;
-            Level[i].text = list[i].Item4.ToString();
+            Level[i].text ="Ур " + list[i].Item4.ToString();
             characters[i] = list[i].Item5;
         }
     }
@@ -58,5 +58,9 @@ public class UpgradePanel : MonoBehaviour
     public void Click2()
     {
         characters[0].LvlUpWeapon(Name[1].text);
+    }
+    public void Click3()
+    {
+        characters[0].LvlUpWeapon(Name[2].text);
     }
 }
