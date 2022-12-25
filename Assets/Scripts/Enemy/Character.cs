@@ -17,6 +17,9 @@ public class Character : Creature
     public int hpRegenerationColldown = 4;
     public float hpRegenerationTimer = 4f;
     public float hpRegeneration = 1f;
+    public List<pickUp> links = new List<pickUp>();
+
+    public GameObject EndGAmemennu;
 
     public static Action <List<(Sprite, string, string, int, Character)>> onOpen;
     private void Awake()
@@ -27,9 +30,9 @@ public class Character : Creature
 
     private void Start()
     {
-        _weapons.AddRange(gameObject.GetComponents<Weapon>());
+        //_weapons.AddRange(gameObject.GetComponents<Weapon>());
 
-        //_weapons.Add(gameObject.GetComponent<WeaponGunPlayer>());
+        _weapons.Add(gameObject.GetComponent<WeaponGunPlayer>());
         //_weapons[0].description = " damege +5";
         var comp = gameObject.GetComponent<WeaponGunPlayer>().enabled = true;
         maxHp = _hp;
@@ -128,7 +131,20 @@ public class Character : Creature
                 _hp += hpRegeneration;
         }
     }
+    public override void Die(GameObject creature)
+    {
+        EndGAmemennu.SetActive(true);
+        
+        links.AddRange(GameObject.FindObjectsOfType<pickUp>());
+        foreach (var link in links)
+        {
+            Debug.Log(link.name);
+            Destroy(link.gameObject);
+        }
+        //base.Die(creature);
+        Time.timeScale = 0;
 
+    }
     public void HpRegenerationUp (float hpRegenerationBoost)
     {
         hpRegeneration += hpRegenerationBoost;

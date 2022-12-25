@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1285312371301494004}
   - component: {fileID: -7848944637434736273}
   - component: {fileID: -6121645050599381073}
-  - component: {fileID: -5904933567382492438}
   - component: {fileID: 1495537206}
   m_Layer: 6
   m_Name: monke
@@ -104,6 +103,7 @@ MonoBehaviour:
   _hp: 5
   _speed: 5
   Damage: 5
+  drop: {fileID: 5633177095355603698, guid: 45240e6755d0d424fb1f1f1a34583307, type: 3}
   expeienceReward: 400
 --- !u!61 &-7848944637434736273
 BoxCollider2D:
@@ -152,19 +152,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-5904933567382492438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3723439483744097327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c1cecce77ae2df479ba33c3b4161205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drop: {fileID: 5633177095355603698, guid: 45240e6755d0d424fb1f1f1a34583307, type: 3}
 --- !u!114 &1495537206
 MonoBehaviour:
   m_ObjectHideFlags: 0
