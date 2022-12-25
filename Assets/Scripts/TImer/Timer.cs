@@ -35,6 +35,7 @@ public class Timer : MonoBehaviour
     }
     private void Start()
     {
-        TextTimer.text = timerSecond.ToString() ;
-    }
+        timerMinut = 0;
+        timerSecond = 0;
+}
 }
