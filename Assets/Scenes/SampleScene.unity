@@ -2535,6 +2535,9 @@ MonoBehaviour:
   hpBar: {fileID: 1448468180}
   maxHp: 0
   _weapons: []
+  hpRegenerationColldown: 4
+  hpRegenerationTimer: 4
+  hpRegeneration: 0
 --- !u!114 &776598805
 MonoBehaviour:
   m_ObjectHideFlags: 0
