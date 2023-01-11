@@ -12,6 +12,7 @@ public class WeaponGunPlayer : Weapon
     private float timeBtwShots;
     public float startTimeBtwShots = 2;
 
+    float pauseBtwShots = 0.5f;
     public WeaponGunPlayer()
     {
         damage = 10;
@@ -55,7 +56,7 @@ public class WeaponGunPlayer : Weapon
         {
             for(int i = 0; i < projectileNumber; i++)
             {
-                Invoke("CreatBullet",i*0.5f);
+                Invoke("CreatBullet",i * pauseBtwShots);
 
             }
 
@@ -99,27 +100,29 @@ public class WeaponGunPlayer : Weapon
         switch(level)
         {
             case 0:
-                description = "damage +5";
+                description = "Projectile + 1";
+                projectileNumber++;
                 break;
             case 1:
-                damage += 5;
-                description = "projectileNumber + 1";
+                projectileNumber++;
+                description = "Projectile + 1";
                 break;
             case 2:
                 projectileNumber++;
-                description = "projectile speeds 1.5";
+                description = "Projectile speed * 1.5";
                 break;
             case 3:
                 projectileSpeed *= 1.5f;
-                description = "delayAttack -0.5";
+                description = "delay Attack -0.5";
                 break;
             case 4:
                 delayAttack -= 0.5f;
-                description = "damage +5";
+                pauseBtwShots = 0.3f;
+                description = "Projectile + 1";
                 break;
             default:
-                damage += 5;
-                description = "damage +5";
+                projectileNumber++;
+                description = "Projectile + 1";
                 break;
         } 
     }

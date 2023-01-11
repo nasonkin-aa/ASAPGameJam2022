@@ -15,8 +15,7 @@ public abstract class Weapon : MonoBehaviour
     protected int projectileNumber;
     [SerializeField]
     protected float projectileSpeed;
-    [SerializeField]
-    protected float aoeSice;
+    protected float aoeSize = 1;
     [SerializeField]
     protected float tickRate;
     [SerializeField]

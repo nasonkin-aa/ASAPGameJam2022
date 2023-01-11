@@ -28,15 +28,15 @@ public class SpeedUpPassive : Weapon
         {
             case 0:
                 player.SpeedBoost(1);
-                description = "speed +1";
+                description = "Speed +1";
                 break;
             case 1:
                 player.SpeedBoost(1);
-                description = "HP +1";
+                description = "Speed +1";
                 break;
             default:
-                player.SpeedBoost(1); 
-                description = "HP +1";
+                player.SpeedBoost(0.5f); 
+                description = "Speed + 0.5";
                 break;
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AOEAroundPlauer : Weapon
 {
     private float timeBtwShots;
@@ -10,10 +11,22 @@ public class AOEAroundPlauer : Weapon
     public LayerMask enemyLayerMask = 6;
     public GameObject frost;
 
+    [SerializeField]
+
+
+    public void OnDestroy()
+    {
+        
+    }
+    ~AOEAroundPlauer()
+    {
+
+    }
     public AOEAroundPlauer()
     {
         damage = 10;
         description = "������� ���� ������ ���������";
+        Debug.Log(aoeSize);
     }
 
     private void OnDrawGizmos()
@@ -21,7 +34,7 @@ public class AOEAroundPlauer : Weapon
         // Set the color of Gizmos to green
         Gizmos.color = Color.green;
 
-        Gizmos.DrawWireSphere(transform.position, 3);
+        Gizmos.DrawWireSphere(transform.position, 3 * aoeSize);
     }
     public override void Attack()
     {
@@ -31,7 +44,8 @@ public class AOEAroundPlauer : Weapon
         if (timeBtwShots <= 0)
         {        
             frost.SetActive(true);
-            Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(transform.position, 3 * aoeSice, enemyLayerMask);
+           
+            Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(transform.position, 3 * aoeSize, enemyLayerMask);
             
             foreach (var enemy in enemyColliders)
             {
@@ -56,23 +70,24 @@ public class AOEAroundPlauer : Weapon
         switch(level)
         {
             case 0:
-                description = "damage +2";
+                description = "Damage +2";
                 break;
             case 1:
                 damage += 2;
-                description = "aoe size x1.5";
+                description = "Size x1.5";
                 break;
             case 2:
-                aoeSice *= 1.5f;
-                description = "delay attack -0.5";
+                aoeSize *= 1.5f;
+                frost.transform.localScale *= aoeSize;
+                description = "Delay attack -0.5";
                 break;
             case 3:
                 delayAttack -= 0.5f;
-                description = "damage +2";
+                description = "Damage +2";
                 break;
             default:
                 damage += 2;
-                description = "damage +2";
+                description = "Damage +2";
                 break;
         }
         level++;

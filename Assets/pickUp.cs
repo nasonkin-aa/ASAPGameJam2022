@@ -7,7 +7,7 @@ public class pickUp : MonoBehaviour
 {
     private void Start()
     {
-        Invoke("destoryExp", 30);
+        //Invoke("destoryExp", 30);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

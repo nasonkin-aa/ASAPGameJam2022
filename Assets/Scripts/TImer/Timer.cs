@@ -11,14 +11,14 @@ public class Timer : MonoBehaviour
     public GameObject win;
     public Text TextTimer;
 
-    private void Update()
+    private void FixedUpdate()
     {
         timerSecond += Time.deltaTime;
         var answer = string.Format("{0}:{1:00}", 
             timerMinut, 
             timerSecond);
         TextTimer.text = answer;
-        if (timerSecond > 60)
+        if (timerSecond >= 60)
         {
             Debug.Log(timerSecond);
             timerSecond = 0;
@@ -26,13 +26,14 @@ public class Timer : MonoBehaviour
         }
         if (timerMinut == 5)
         {
-            win.SetActive(true);
+           /* win.SetActive(true);
             Time.timeScale = 0f;
-            PauseMenu.GameIsPaused = true;
+            PauseMenu.GameIsPaused = true;*/
             
         }
-
+        
     }
+  
     private void Start()
     {
         timerMinut = 0;

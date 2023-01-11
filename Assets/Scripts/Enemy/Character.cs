@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class Character : Creature
 {
     bool IsSaveCharacter;
+
+    public GameObject Chains;
     private PlayerInput _playerInput;
     Rigidbody2D rigidbody2D;
     [SerializeField] private BarStatus hpBar;
@@ -42,11 +44,14 @@ public class Character : Creature
 
     private List<(Sprite, string, string, int, Character)> GetRandomWeapons()
     {
-        var allWeapons = gameObject.GetComponents<Weapon>();
+        List<Weapon> allWeapons = new List<Weapon>();
+        allWeapons.AddRange(gameObject.GetComponents<Weapon>());
+        allWeapons.Add(Chains.GetComponent<Weapon>());
+
         var weaponList = new List<(Sprite, string, string, int, Character)>();
 
         var random = new System.Random();
-        var intArray = Enumerable.Range(0, allWeapons.Length).OrderBy(t => random.Next()).Take(3).ToArray();
+        var intArray = Enumerable.Range(0, allWeapons.Count).OrderBy(t => random.Next()).Take(3).ToArray();
 
         foreach (var weapon in intArray)
         {
@@ -59,7 +64,7 @@ public class Character : Creature
     void Update()
     {
         rigidbody2D.position +=
-          (Vector2) _playerInput.Moving * Time.deltaTime * _speed;
+          (Vector2) _playerInput.Moving.normalized * Time.deltaTime * _speed;
         _weapons.ForEach(e=>e.Attack());
 
         hpBar.SetState(_hp, maxHp);
@@ -95,7 +100,10 @@ public class Character : Creature
         }
         else
         {
-            var newWeapons = gameObject.GetComponents<Weapon>();
+
+            List<Weapon> newWeapons = new List<Weapon>();
+            newWeapons.AddRange(gameObject.GetComponents<Weapon>());
+            newWeapons.Add(Chains.GetComponent<Weapon>());
             foreach (var weapon in newWeapons)
             {
                 if (weapon.name == name)
@@ -114,7 +122,7 @@ public class Character : Creature
         maxHp += hp;
         _hp += hp;
     }
-    public void SpeedBoost(int speed)
+    public void SpeedBoost(float speed)
     {
         _speed += speed;
     }

@@ -5,10 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _enemy;
+    private GameObject _enemyBread;
     [SerializeField]
     private GameObject _enemyMonke;
-
     [SerializeField]
     private GameObject _wolfEnemy;
     [SerializeField]
@@ -20,12 +19,18 @@ public class EnemySpawner : MonoBehaviour
     private float _spawnTimer;
     [SerializeField]
     private GameObject _playerPos;
+
     float timer;
     float pec = 30f;
     float timprc = 30f;
-    
 
-    private void Update()
+    private enum _waves
+    {
+        wave_1, wave_2, wave_3, wave_4, wave_5, wave_6, wave_7
+    }
+    _waves waves;
+
+    private void FixedUpdate()
     {
         timer -= Time.deltaTime;
         if (timer < 0f)
@@ -39,12 +44,30 @@ public class EnemySpawner : MonoBehaviour
         timer = _spawnTimer;
     }
 
+    private void WaveControl()
+    {
+        switch (waves)
+        {
+            case _waves.wave_1:
+
+                break;
+            case _waves.wave_2:
+                break;
+            case _waves.wave_3:
+                break;
+            case _waves.wave_4:
+                break;
+            case _waves.wave_5:
+                break;
+        }
+    }
     private void SpawnEnemy()
     {
         
         if (Timer.timerMinut < 1)
         {
-            CreateEnemy(_enemy);
+            CreateEnemy(_enemyBread);
+            CreateEnemy(_enemyBread);
         }
         if (Timer.timerMinut >= 1 && Timer.timerMinut < 2)
         {
@@ -53,7 +76,7 @@ public class EnemySpawner : MonoBehaviour
         }
         if (Timer.timerMinut >= 2 && Timer.timerMinut < 3)
         {
-            CreateEnemy(_enemy);
+            CreateEnemy(_enemyBread);
             CreateEnemy(_enemyMonke);
         }
         if (Timer.timerMinut >= 3 && Timer.timerMinut < 4)
@@ -66,14 +89,14 @@ public class EnemySpawner : MonoBehaviour
         {
             _spawnTimer = 1f;
             CreateEnemy(_enemyMonke);
-            CreateEnemy(_enemy);
+            CreateEnemy(_enemyBread);
             CreateEnemy(_wolfEnemy);
         }
         if (Timer.timerMinut > 5)
         {
             _spawnTimer = 1f;
-            CreateEnemy(_enemy);
-            CreateEnemy(_enemy);
+            CreateEnemy(_enemyBread);
+            CreateEnemy(_enemyBread);
 
             timprc -= Time.deltaTime;
             if (timprc < 0)
@@ -82,14 +105,11 @@ public class EnemySpawner : MonoBehaviour
                 timprc = pec;
             }
         }
+        
 
-        IEnumerator peckra()
-        {
-            yield return new WaitForSeconds(70f);
-            CreateEnemy(_enemy);
-        }
         void CreateEnemy(GameObject enemy)
         {
+            Debug.Log("spawn");
             Vector3 position = GenerateRandomPosition();
 
             position += _playerPos.transform.position;

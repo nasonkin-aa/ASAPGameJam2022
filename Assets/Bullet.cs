@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     public int damage;
     private const int enemyLayer = 6;
-
+    
     private void Start()
     {
         Invoke("destroyBullet", 3);
