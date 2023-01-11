@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
 
     float timer;
     float pec = 30f;
-    float timprc = 30f;
+    float timprc = 10f;
 
     private enum _waves
     {
@@ -77,6 +77,7 @@ public class EnemySpawner : MonoBehaviour
         if (Timer.timerMinut >= 2 && Timer.timerMinut < 3)
         {
             CreateEnemy(_enemyBread);
+            CreateEnemy(_enemyBread);
             CreateEnemy(_enemyMonke);
         }
         if (Timer.timerMinut >= 3 && Timer.timerMinut < 4)
@@ -97,26 +98,27 @@ public class EnemySpawner : MonoBehaviour
             _spawnTimer = 1f;
             CreateEnemy(_enemyBread);
             CreateEnemy(_enemyBread);
-
-            timprc -= Time.deltaTime;
+            Debug.Log(timprc);
+            timprc -= 1;
             if (timprc < 0)
             {
+                Debug.Log("pechka");
                 CreateEnemy(_pechka);
                 timprc = pec;
             }
         }
         
-
         void CreateEnemy(GameObject enemy)
         {
             Debug.Log("spawn");
             Vector3 position = GenerateRandomPosition();
-
             position += _playerPos.transform.position;
             GameObject newEnemy = Instantiate(enemy);
             newEnemy.transform.position = position;
         }
     }
+   
+
 
     private Vector3 GenerateRandomPosition()
     {
@@ -131,7 +133,6 @@ public class EnemySpawner : MonoBehaviour
         {
             position.y = UnityEngine.Random.Range(-_spawnArea.y, _spawnArea.y);
             position.x = _spawnArea.x * f;
-
         }
         position.z = 0;
         return position;
