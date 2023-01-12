@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2303374333361457531}
   - component: {fileID: 5565812591166767860}
   - component: {fileID: 1285312371301494004}
-  - component: {fileID: -7848944637434736273}
   - component: {fileID: -6121645050599381073}
   - component: {fileID: 1495537206}
+  - component: {fileID: 5165027459813458694}
   m_Layer: 6
   m_Name: pechka
   m_TagString: Untagged
@@ -105,32 +105,6 @@ MonoBehaviour:
   Damage: 10
   drop: {fileID: 5633177095355603698, guid: 45240e6755d0d424fb1f1f1a34583307, type: 3}
   expeienceReward: 400
---- !u!61 &-7848944637434736273
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3723439483744097327}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0026835501, y: -0.0040973425}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.83, y: 6.2813673}
-    newSize: {x: 0.75, y: 0.75}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 1
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7048157, y: 0.64762664}
-  m_EdgeRadius: 0
 --- !u!50 &-6121645050599381073
 Rigidbody2D:
   serializedVersion: 4
@@ -164,3 +138,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1224e4da56bd14db74934066b78f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &5165027459813458694
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723439483744097327}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.27

@@ -27,16 +27,16 @@ public class HpRegeneration : Weapon
         switch (level)
         {
             case 0:
-                player.HpRegenerationUp(1f);
-                description = "HpRegeneration +1";
+                player.HpRegenerationUp(2f);
+                description = "HpRegeneration + 2";
                 break;
             case 1:
-                player.HpRegenerationUp(1f);
-                description = "HpRegeneration +0.5";
+                player.HpRegenerationUp(2f);
+                description = "HpRegeneration + 2";
                 break;
             default:
-                player.HpRegenerationUp(0.5f);
-                description = "HpRegeneration +0.5";
+                player.HpRegenerationUp(1f);
+                description = "HpRegeneration +1";
                 break;
         }
     }
