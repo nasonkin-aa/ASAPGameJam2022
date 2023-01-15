@@ -71,8 +71,9 @@ public class EnemySpawner : MonoBehaviour
         }
         if (Timer.timerMinut >= 1 && Timer.timerMinut < 2)
         {
-            _spawnTimer = 1.5f;
+            _spawnTimer = 1.3f;
             CreateEnemy(_enemyMonke);
+            CreateEnemy(_enemyBread);
         }
         if (Timer.timerMinut >= 2 && Timer.timerMinut < 3)
         {
@@ -93,7 +94,7 @@ public class EnemySpawner : MonoBehaviour
             CreateEnemy(_enemyBread);
             CreateEnemy(_wolfEnemy);
         }
-        if (Timer.timerMinut > 5)
+        if (Timer.timerMinut >= 5)
         {
             _spawnTimer = 1f;
             CreateEnemy(_enemyBread);

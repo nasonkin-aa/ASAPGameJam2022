@@ -70,10 +70,10 @@ public class AOEAroundPlauer : Weapon
         switch(level)
         {
             case 0:
-                description = "Damage +2";
+                description = "Damage + 1";
                 break;
             case 1:
-                damage += 2;
+                damage += 1;
                 description = "Size x1.5";
                 break;
             case 2:
@@ -83,11 +83,11 @@ public class AOEAroundPlauer : Weapon
                 break;
             case 3:
                 delayAttack -= 0.5f;
-                description = "Damage +2";
+                description = "Damage +1";
                 break;
             default:
-                damage += 2;
-                description = "Damage +2";
+                damage += 1;
+                description = "Damage +1";
                 break;
         }
         level++;
